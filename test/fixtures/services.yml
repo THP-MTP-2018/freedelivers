@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mileage: 1
+  delivery_city: MyString
+  transport_type: MyString
+  price: 1
+  terms_transport: MyText
+  weight_package: 1
+  volume_package: 1
+  package_type: MyString
+
+two:
+  mileage: 1
+  delivery_city: MyString
+  transport_type: MyString
+  price: 1
+  terms_transport: MyText
+  weight_package: 1
+  volume_package: 1
+  package_type: MyString

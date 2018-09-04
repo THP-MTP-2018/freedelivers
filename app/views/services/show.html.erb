@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @service.mileage %>
+</p>
+
+<p>
+  <strong>Delivery city:</strong>
+  <%= @service.delivery_city %>
+</p>
+
+<p>
+  <strong>Transport type:</strong>
+  <%= @service.transport_type %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @service.price %>
+</p>
+
+<p>
+  <strong>Terms transport:</strong>
+  <%= @service.terms_transport %>
+</p>
+
+<p>
+  <strong>Weight package:</strong>
+  <%= @service.weight_package %>
+</p>
+
+<p>
+  <strong>Volume package:</strong>
+  <%= @service.volume_package %>
+</p>
+
+<p>
+  <strong>Package type:</strong>
+  <%= @service.package_type %>
+</p>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>
