@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem for freedelivers project
 gem 'devise'
 
+gem 'pg_search'
 
 
 

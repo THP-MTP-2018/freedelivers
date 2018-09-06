@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Services</h1>
+<%= form_tag services_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "city" %>
+  <%= submit_tag 'Search!' %>
+<% end %>
 
+<h1>Services</h1>
 <table>
   <thead>
     <tr>
