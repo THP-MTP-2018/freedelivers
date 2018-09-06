@@ -1,8 +1,8 @@
 class Service < ApplicationRecord
-  has_many :users
+  belongs_to :user
 
   def self.search(search)
-    
+
       where("delivery_city Like ?", "%#{search}%")
 
   end
