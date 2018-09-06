@@ -7,9 +7,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'css/animate.min.css' %>
+    <%= stylesheet_link_tag 'css/bootstrap.css' %>
+    <%= stylesheet_link_tag 'css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'css/jquery.DonutWidget.min.css' %>
+    <%= stylesheet_link_tag 'css/jquerysctipttop.css' %>
+    <%= stylesheet_link_tag 'css/linearicons.css' %>
+    <%= stylesheet_link_tag 'css/magnific-popup.css' %>
+    <%= stylesheet_link_tag 'css/main.css' %>
+    <%= stylesheet_link_tag 'css/nice-select.css' %>
+    <%= stylesheet_link_tag 'css/owl.carousel.css' %>
+
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
+
+    <% javascript_include_tag 'js/easing.min.js' %>
+    <% javascript_include_tag 'js/hoverIntent.js' %>
+    <% javascript_include_tag 'js/jquery.ajaxchimp.min.js' %>
+    <% javascript_include_tag 'js/jquery.magnific-popup.min.js' %>
+    <% javascript_include_tag 'js/jquery.nice-select.min.js' %>
+    <% javascript_include_tag 'js/jquery.sticky.js' %>
+    <% javascript_include_tag 'js/mail-script.js' %>
+    <% javascript_include_tag 'js/main.js' %>
+    <% javascript_include_tag 'js/owl.carousel.min.js' %>
+    <% javascript_include_tag 'js/parallax.min.js' %>
+    <% javascript_include_tag 'js/slick.js' %>
+    <% javascript_include_tag 'js/superfish.js' %>
+    <% javascript_include_tag 'js/superfish.min.js' %>
   </body>
 </html>
