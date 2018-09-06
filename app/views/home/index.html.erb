@@ -7,40 +7,17 @@
             <h1 class="text-white">
               <span>1500+</span> Jobs posted last week
             </h1>
-            <form action="search.html" class="serach-form-area">
+            <%= form_tag services_path, method: :get do %>
               <div class="row justify-content-center form-wrap">
                 <div class="col-lg-4 form-cols">
-                  <input type="text" class="form-control" name="search" placeholder="what are you looging for?">
+                  <%= text_field_tag :search, params[:search],class: 'form-control', placeholder: "city ?" %>
                 </div>
-                <div class="col-lg-3 form-cols">
-                  <div class="default-select" id="default-selects">
-                    <select>
-                      <option value="1">Select area</option>
-                      <option value="2">Dhaka</option>
-                      <option value="3">Rajshahi</option>
-                      <option value="4">Barishal</option>
-                      <option value="5">Noakhali</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-3 form-cols">
-                  <div class="default-select" id="default-selects2">
-                    <select>
-                      <option value="1">All Category</option>
-                      <option value="2">Medical</option>
-                      <option value="3">Technology</option>
-                      <option value="4">Goverment</option>
-                      <option value="5">Development</option>
-                    </select>
-                  </div>
-                </div>
+
                 <div class="col-lg-2 form-cols">
-                    <button type="button" class="btn btn-info">
-                      <span class="lnr lnr-magnifier"></span> Search
-                    </button>
+                    <%= submit_tag 'Search', class: 'btn btn-info' %>
                 </div>
               </div>
-            </form>
+            <% end %>
             <p class="text-white"> <span>Search by tags:</span> Tecnology, Business, Consulting, IT Company, Design, Development</p>
           </div>
         </div>
