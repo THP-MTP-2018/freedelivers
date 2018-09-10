@@ -1,5 +1,26 @@
-<h1>New Service</h1>
+<% if current_user %>
 
-<%= render 'form', service: @service %>
+<section class="banner-area relative" id="home">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="about-content col-lg-12">
+        <h1 class="text-white">
+          Ajouter votre service
+        </h1>
+        <p class="text-white"><%= link_to('Accueil', root_path)%>  <span class="lnr lnr-arrow-right"></span>  <%= link_to('Ajouter votre service', new_service_path)%></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<%= link_to 'Back', services_path %>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-8">
+      <h2>Merci de remplir tous les champs</h2>
+      <%= render 'form', service: @service %>
+    </div>
+  </div>
+</div>
+
+<% end %>
