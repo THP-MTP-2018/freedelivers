@@ -1,26 +1,46 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="about-content col-lg-12">
+        <h1 class="text-white">
+          Compte
+        </h1>
+        <p class="text-white"><a href="index.html">Accueil</a>  <span class="lnr lnr-arrow-right"></span>  <a href="contact.html"> Compte</a></p>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</section>
+<!-- End banner Area -->
 
-<%= render "devise/shared/links" %>
+<!-- start form -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-8">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mt-10">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'single-input', placeholder: 'email',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Email'" %>
+        </div>
+
+        <div class="mt-10">
+          <%= f.password_field :password, autocomplete: "current-password",class: 'single-input', placeholder: 'Mot de passe',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Mot de passe'" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="mt-10">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="mt-10">
+          <%= f.submit "Connexion", class: 'genric-btn primary circle' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
