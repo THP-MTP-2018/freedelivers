@@ -12,45 +12,47 @@
     </div>
   </div>
 </section>
-<!-- End banner Area -->
 
-<!-- start form -->
-<div class="container mt-5 mb-5">
-  <div class="row">
-    <div class="col">
-      1 of 3
-    </div>
-    <div class="col-8">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
 
-            <div class="mt-10">
-              <%= f.text_field :first_name, autofocus: true, autocomplete: "Prénom", class: 'single-input', placeholder: 'Prénom',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Prénom'" %>
-            </div>
+<div class="signup">
+<h2>Sign up</h2>
 
-            <div class="mt-10">
-              <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom", class: 'single-input', placeholder: 'Nom',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Nom'" %>
-            </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-            <div class="mt-10">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'single-input', placeholder: 'email',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Email'" %>
-            </div>
-
-            <div class="mt-10">
-              <%= f.password_field :password, autocomplete: "new-password",class: 'single-input', placeholder: 'Mot de passe',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Mot de passe'" %>
-              <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br/>
-            </div>
-
-            <div class="mt-10">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'single-input', placeholder: 'Confirmation du mot de passe',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Confirmation du mot de passe'" %>
-            </div>
-
-            <div class="mt-10">
-              <%= f.submit "Je m'inscris", class: 'genric-btn primary circle' %>
-            </div>
-          <% end %>
-    </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autocomplete: "first_name" %>
   </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+</br>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+</div>
+<%= render "devise/shared/links" %>
+
 </div>
