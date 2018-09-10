@@ -6,5 +6,6 @@ class HomeController < ApplicationController
   end
 
   def profil
+    @services = Service.all
   end
 end
