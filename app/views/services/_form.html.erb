@@ -13,50 +13,48 @@
 
       <%= form.hidden_field :user_id, :value => current_user.id %>
 
-      <p>current_user.first_name</p>
-
       <div class="mt-10">
-        <%= form.label :mileage %>
-        <%= form.number_field :mileage, autofocus: true, autocomplete: "Kilometre", class: 'single-input', placeholder: 'Kilometre',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Kilometre'" %>
+        <%= form.label :Indiquez_le_nombre_de_km_autour_de_votre_ville_pour_vos_livraisons %>
+        <%= form.number_field :mileage, autofocus: true, autocomplete: "kilomètres", class: 'single-input', placeholder: 'kilomètres',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'kilomètres'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :delivery_city %>
+        <%= form.label :Votre_ville_de_livraison %>
         <%= form.text_field :delivery_city, autofocus: true, autocomplete: "Ville", class: 'single-input', placeholder: 'Ville',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Ville'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :transport_type %>
+        <%= form.label :Quels_type_de_véhicule_utilisez_vous %>
         <%= form.text_field :transport_type, autofocus: true, autocomplete: "Type de transport", class: 'single-input', placeholder: 'Type de transport',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Type de transport'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :price %>
+        <%= form.label :Indiquez_un_prix_pour_une_distance_maximun_et_un_volume_maximum %>
         <%= form.number_field :price, autofocus: true, autocomplete: "Prix", class: 'single-input', placeholder: 'Prix',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Prix'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :weight_package %>
+        <%= form.label :Indiquez_le_poids_maximun_que_vous_voulez_transporter %>
         <%= form.number_field :weight_package, autofocus: true, autocomplete: "Poids du colis", class: 'single-input', placeholder: 'Poids du colis',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Poids du colis'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :volume_package %>
+        <%= form.label :Indiquez_le_volume_maximun_que_vous_voulez_transporter %> <span>(optionelle)</span>
         <%= form.number_field :volume_package, autofocus: true, autocomplete: "Volume du paquet", class: 'single-input', placeholder: 'Volume du paquet',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Volume du paquet'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :package_type %>
+        <%= form.label :Indiquez_le_type_de_paquet_que_vous_etes_prêt_à_transporter%><span> (verre,carton...)</span>
         <%= form.text_field :package_type, autofocus: true, autocomplete: "Type de paquet", class: 'single-input', placeholder: 'Type de paquet',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Type de paquet'" %>
       </div>
 
       <div class="mt-10">
-        <%= form.label :terms_transport %>
+        <%= form.label :Indiquez_vos_conditions_de_transport %> <span>Attention remplissez bien vos conditions de transport : prix spécifique, payment ....  </span>
         <%= form.text_area :terms_transport, autofocus: true, autocomplete: "Vos conditions", class: 'single-input', placeholder: 'Vos conditions',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Vos conditions'",rows: 8 %>
       </div>
 
       <div class="mt-10">
-        <%= form.submit "Ajouter mon service", class: 'genric-btn primary circle' %>
+        <%= form.submit "Valider", class: 'genric-btn primary circle' %>
       </div>
 
 <% end %>

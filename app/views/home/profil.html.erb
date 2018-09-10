@@ -1,4 +1,4 @@
-<% if current_user %>
+
 
 <section class="banner-area relative" id="home">
   <div class="overlay overlay-bg"></div>
@@ -14,7 +14,7 @@
   </div>
 </section>
 <!-- End banner Area -->
-
+<% if current_user %>
 <!-- start form -->
 <div class="container mt-5">
     <div class="row ml-3 mr-3">
@@ -56,14 +56,25 @@
           <div class="titles">
             <h3>Vos services</h3>
             <br>
-            <p>Nom</p>
-            <p>Prénom</p>
-            <p>Adresse</p>
-            <p>email</p>
-            <p>Téléphone</p>
-          <ul>
-              <li><%= link_to('Mettre à jour', new_service_path, class: "ticker-btn")%></li>
-          </ul>
+              <% @services.each do|service| %>
+                <% if current_user.id == service.user_id %>
+                  <p>km: <%= service.mileage %></p>
+                  <p>Ville: <%= service.delivery_city %></p>
+                  <p>Type de transport: <%= service.transport_type %></p>
+                  <p>Tarif: <%= service.price %> €</p>
+                  <p>Poids du colis max: <%= service.weight_package %> kg</p>
+                  <p>Volume du colis: <%= service.volume_package %> (m2, cm....)</p>
+                  <p>Type de colis: <%= service.package_type %></p>
+                  <p>Vos conditions: <br><%= service.terms_transport %></p>
+                  <% end %>
+                  <ul>
+                    <% if current_user.id == service.user_id %>
+                      <li><%= link_to('Mettre à jour', edit_service_path(service), class: "ticker-btn")%></li>
+                    <% else %>
+                      <li><%= link_to('Ajouter votre service', new_service_path, class: "ticker-btn")%></li>
+                    <% end %>
+                  </ul>
+                <% end %>
           </div>
         </div>
       </div>
@@ -73,5 +84,7 @@
 </div>
 
 <% else %>
+  <div class="container mt-5">
     <h4><%= link_to "Merci de vous inscrire pour acceder à votre profil 😘", new_user_registration_path %></h4>
+  </div>
 <% end %>
