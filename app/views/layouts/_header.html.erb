@@ -11,9 +11,15 @@
           <li><%= link_to "Contact", contacts_path %></li>
 
           <% if user_signed_in?%>
+            <li>
+              <a href="/profil">Bonjour, <%= current_user.first_name %></a>
+            </li>
+
+            <li>
+               <%= link_to('Votre profil', profil_path, class: "ticker-btn")%>
+            </li>
              <li>
                <%= link_to('Deconnexion', destroy_user_session_path, method: :delete, class: "ticker-btn") %>
-               Bonjour <%= current_user.first_name %>
              </li>
            <%else%>
                 <li>

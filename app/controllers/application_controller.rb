@@ -1,29 +1,22 @@
 class ApplicationController < ActionController::Base
-include ApplicationHelper
 
-	 protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :store_user_location!, if: :storable_location?
+    protect_from_forgery with: :exception
 
-  protected
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation) }
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name,:last_name, :email, :password, :current_password) }
-  end
+    protected
 
-  private
+         def after_sign_in_path_for(resource)
+           request.env['omniauth.origin'] || stored_location_for(resource) || profil_path
+         end
 
-  def storable_location?
-    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
-  end
+         def after_update_path_for(resource)
+           request.env['omniauth.origin'] || stored_location_for(resource) || profil_path
+         end
 
-  def store_user_location!
-    # :user is the scope we are authenticating
-    store_location_for(:user, request.fullpath)
-  end
+         def configure_permitted_parameters
+              devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:last_name,:first_name,:adress,:zip_code,:city,:email,:phone,:mobile_phone, :password)}
 
-  def after_sign_in_path_for(resource_or_scope)
-    stored_location_for(resource_or_scope) || super
-  end
+              devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:last_name,:first_name,:adress,:zip_code,:city,:email,:phone,:mobile_phone, :password, :current_password)}
+          end
 end

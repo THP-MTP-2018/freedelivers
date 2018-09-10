@@ -1,7 +1,7 @@
 <%= form_with(model: service, local: true) do |form| %>
   <% if service.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+      <h2><%= pluralize(service.errors.count, "erreur") %> impossible d'enregistré ce service:</h2>
 
       <ul>
       <% service.errors.full_messages.each do |message| %>
@@ -11,47 +11,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :mileage %>
-    <%= form.number_field :mileage %>
-  </div>
+      <%= form.hidden_field :user_id, :value => current_user.id %>
 
-  <div class="field">
-    <%= form.label :delivery_city %>
-    <%= form.text_field :delivery_city %>
-  </div>
+      <p>current_user.first_name</p>
 
-  <div class="field">
-    <%= form.label :transport_type %>
-    <%= form.text_field :transport_type %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :mileage %>
+        <%= form.number_field :mileage, autofocus: true, autocomplete: "Kilometre", class: 'single-input', placeholder: 'Kilometre',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Kilometre'" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :delivery_city %>
+        <%= form.text_field :delivery_city, autofocus: true, autocomplete: "Ville", class: 'single-input', placeholder: 'Ville',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Ville'" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :terms_transport %>
-    <%= form.text_area :terms_transport %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :transport_type %>
+        <%= form.text_field :transport_type, autofocus: true, autocomplete: "Type de transport", class: 'single-input', placeholder: 'Type de transport',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Type de transport'" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :weight_package %>
-    <%= form.number_field :weight_package %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :price %>
+        <%= form.number_field :price, autofocus: true, autocomplete: "Prix", class: 'single-input', placeholder: 'Prix',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Prix'" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :volume_package %>
-    <%= form.number_field :volume_package %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :weight_package %>
+        <%= form.number_field :weight_package, autofocus: true, autocomplete: "Poids du colis", class: 'single-input', placeholder: 'Poids du colis',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Poids du colis'" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :package_type %>
-    <%= form.text_field :package_type %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :volume_package %>
+        <%= form.number_field :volume_package, autofocus: true, autocomplete: "Volume du paquet", class: 'single-input', placeholder: 'Volume du paquet',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Volume du paquet'" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <div class="mt-10">
+        <%= form.label :package_type %>
+        <%= form.text_field :package_type, autofocus: true, autocomplete: "Type de paquet", class: 'single-input', placeholder: 'Type de paquet',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Type de paquet'" %>
+      </div>
+
+      <div class="mt-10">
+        <%= form.label :terms_transport %>
+        <%= form.text_area :terms_transport, autofocus: true, autocomplete: "Vos conditions", class: 'single-input', placeholder: 'Vos conditions',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Vos conditions'",rows: 8 %>
+      </div>
+
+      <div class="mt-10">
+        <%= form.submit "Ajouter mon service", class: 'genric-btn primary circle' %>
+      </div>
+
 <% end %>

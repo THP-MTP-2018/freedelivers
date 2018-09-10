@@ -1,43 +1,96 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% if current_user %>
+
+<section class="banner-area relative" id="home">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="about-content col-lg-12">
+        <h1 class="text-white">
+          Mise à jour de votre profil
+        </h1>
+        <p class="text-white"><%= link_to('Accueil', root_path)%>  <span class="lnr lnr-arrow-right"></span>  <%= link_to('Mise à jour de votre profil', new_user_registration_path)%></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-8">
+
+
+<h2>Mise à jour de vos données</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mt-10">
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom", class: 'single-input', placeholder: 'Nom',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Nom'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "Prénom", class: 'single-input', placeholder: 'Prénom',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Prénom'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.text_field :adress, autofocus: true, autocomplete: "Adresse (exemple: 5 rue des mimosas)", class: 'single-input', placeholder: 'Adresse (exemple: 5 rue des mimosas)',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Adresse (exemple: 5 rue des mimosas)'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.number_field :zip_code, autofocus: true, autocomplete: "Code postal", class: 'single-input', placeholder: 'Code postal',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Code postal'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.text_field :city, autofocus: true, autocomplete: "Ville", class: 'single-input', placeholder: 'Ville',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Ville'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.telephone_field :phone, autofocus: true, autocomplete: "Télephone", class: 'single-input', placeholder: 'Télephone',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Télephone'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.telephone_field :mobile_phone, autofocus: true, autocomplete: "Télephone mobile", class: 'single-input', placeholder: 'Télephone mobile',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Télephone mobile'" %>
+  </div>
+
+  <div class="mt-10">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'single-input', placeholder: 'email',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Email'" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="mt-10">
+    <%= f.label :Mot_de_passe %> <i>(
+laisser vide si vous ne voulez pas le changer)</i><br />
+    <%= f.password_field :password, autocomplete: "Nouveau mot de passe", class: 'single-input', placeholder: 'Nouveau mot de passe',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Nouveau mot de passe'" %>
     <% if @minimum_password_length %>
-      <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="mt-10">
+    <%= f.password_field :password_confirmation, autocomplete: "Confirmation du mot de passe", class: 'single-input', placeholder: 'Confirmation du mot de passe',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Confirmation du de passe'" %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="mt-10">
+    <%= f.label :Mot_de_passe_actuel %> <i>(
+nous avons besoin de votre mot de passe actuel pour confirmer vos modifications)</i><br />
+    <%= f.password_field :current_password, autocomplete: "Mot de passe actuel", class: 'single-input', placeholder: 'Mot de passe actuel',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Mot de passe actuel'" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="mt-10">
+    <%= f.submit "Mettre à jour", class: 'genric-btn primary circle' %>
   </div>
 <% end %>
+<br>
+<h3> Suppresion de votre profil </h3>
 
-<h3>Cancel my account</h3>
+<p>La suppresion du compte est irreversible <%= button_to "Suprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'genric-btn primary circle', method: :delete %></p>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Back", :back %>
+<% end %>
