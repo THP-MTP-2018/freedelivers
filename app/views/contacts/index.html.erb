@@ -5,9 +5,9 @@
     <div class="row d-flex align-items-center justify-content-center">
       <div class="about-content col-lg-12">
         <h1 class="text-white">
-          Contact Us
+          Nous contacter
         </h1>
-        <p class="text-white"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="contact.html"> Contact Us</a></p>
+          <p class="text-white"><%= link_to('Accueil', root_path)%>  <span class="lnr lnr-arrow-right"></span>  <%= link_to('Nous contacter', contacts_path)%></p>
       </div>
     </div>
   </div>
@@ -19,9 +19,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 d-flex flex-column">
-        <a class="contact-btns" href="#">Submit Your CV</a>
-        <a class="contact-btns" href="#">Post New Job</a>
-        <a class="contact-btns" href="#">Create New Account</a>
+        <%= link_to('Votre compte', new_user_session_path, class: "contact-btns")%>
+        <%= link_to('Inscription', new_user_registration_path, class: "contact-btns")%>
       </div>
       <div class="col-lg-8">
         <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
