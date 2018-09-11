@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /services/1
+  # PATCH/PUT /services/1service_params
   # PATCH/PUT /services/1.json
   def update
     respond_to do |format|
