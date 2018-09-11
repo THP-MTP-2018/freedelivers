@@ -7,7 +7,7 @@
         <h1 class="text-white">
           À propos de nous
         </h1>
-        <p class="text-white link-nav"><a href="index.html">Accueil </a>  <span class="lnr lnr-arrow-right"></span>  <a href="about-us.html"> À propos de nous</a></p>
+          <p class="text-white"><%= link_to('Accueil', root_path)%>  <span class="lnr lnr-arrow-right"></span>  <%= link_to('À propos de nous', about_path)%></p>
       </div>
     </div>
   </div>
@@ -19,58 +19,58 @@
   <div class="container">
     <div class="row d-flex justify-content-center">
       <div class="col-md-8 pb-40 header-text">
-        <h1>Why Choose Us</h1>
+        <h2>Pourquoi nous choisir</h2>
         <p>
-          Who are in extremely love with eco friendly system.
+          Votre portail libre pour trouvez vos futurs clients
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-4 col-md-6">
         <div class="single-service">
-          <h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
+          <h4><span class="lnr lnr-user"></span>Trouvez des clients</h4>
           <p>
-            Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+            Notre annuaire est libre et gratuit. Elle permet de mettre en relation des livreurs libre à des entreprises ou à des particuliers.
           </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="single-service">
-          <h4><span class="lnr lnr-license"></span>Professional Service</h4>
+          <h4><span class="lnr lnr-license"></span>Votre fiche professionelle</h4>
           <p>
-            Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+            En tant que Freedelivers une fiche personalisée sera visible avec vos conditions et vos coordonées.
           </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="single-service">
-          <h4><span class="lnr lnr-phone"></span>Great Support</h4>
+          <h4><span class="lnr lnr-phone"></span>Vos coordonnées</h4>
           <p>
-            Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+            Laissez librement vos coordonnées afin que vos futures clients puissent vous joindre et négociez vos conditions.
           </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="single-service">
-          <h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
+          <h4><span class="lnr lnr-rocket"></span>Lancez vous</h4>
           <p>
-            Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+            Lancez vous grace au portail libre et gratuit Freedelivers. Soyez libre de vos tarifs et de votre temps.
           </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="single-service">
-          <h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
+          <h4><span class="lnr lnr-diamond"></span>Une communauté</h4>
           <p>
-            Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+            Faite parti d'une communauté qui ferra grandir la popularité de notre annuaire, dont vous serez le diamand.
           </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="single-service">
-          <h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
+          <h4><span class="lnr lnr-bubble"></span> Echangez vos idées</h4>
           <p>
-            Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+            Faites nous part de vos idées, l'equipe Freedelivers est à votre écoute pour améliorer votre experience sur notre portail.
           </p>
         </div>
       </div>
@@ -79,34 +79,6 @@
 </section>
 <!-- End service Area -->
 
-<!-- Start feature Area -->
-<section class="feature-area">
-  <div class="container-fluid">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-lg-3 feat-img no-padding">
-        <%= image_tag('f1.jpg', class: 'img-fluid') %>
-      </div>
-      <div class="col-lg-3 no-padding feat-txt">
-        <h6 class="text-uppercase text-white">Basic & Common Repairs</h6>
-        <h1>Who we are</h1>
-        <p>
-          Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical.
-        </p>
-      </div>
-      <div class="col-lg-3 feat-img no-padding">
-        <%= image_tag('f2.jpg', class: 'img-fluid') %>
-      </div>
-      <div class="col-lg-3 no-padding feat-txt">
-        <h6 class="text-uppercase text-white">Basic & Common Repairs</h6>
-        <h1>What we do</h1>
-        <p>
-          Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End feature Area -->
 
 <!-- Start team Area -->
 <section class="team-area section-gap" id="team">
@@ -114,15 +86,15 @@
     <div class="row d-flex justify-content-center">
       <div class="menu-content pb-70 col-lg-8">
         <div class="title text-center">
-          <h1 class="mb-10">Experienced Mentor Team</h1>
-          <p>Who are in extremely love with eco friendly system.</p>
+          <h2 class="mb-10">L'equipe Freedelivers</h2>
+          <p>Une team à votre écoute</p>
         </div>
       </div>
     </div>
     <div class="row justify-content-center d-flex align-items-center">
       <div class="col-md-3 single-team">
           <div class="thumb">
-              <img class="img-fluid" src="img/pages/t1.jpg" alt="">
+              <%= image_tag('t1.jpg', class: 'img-fluid') %>
               <div class="align-items-center justify-content-center d-flex">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -136,7 +108,7 @@
       </div>
       <div class="col-md-3 single-team">
           <div class="thumb">
-              <img class="img-fluid" src="img/pages/t2.jpg" alt="">
+              <%= image_tag('t2.jpg', class: 'img-fluid') %>
               <div class="align-items-center justify-content-center d-flex">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -150,7 +122,7 @@
       </div>
       <div class="col-md-3 single-team">
           <div class="thumb">
-              <img class="img-fluid" src="img/pages/t3.jpg" alt="">
+              <%= image_tag('t3.jpg', class: 'img-fluid') %>
               <div class="align-items-center justify-content-center d-flex">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -164,7 +136,7 @@
       </div>
       <div class="col-md-3 single-team">
           <div class="thumb">
-              <img class="img-fluid" src="img/pages/t4.jpg" alt="">
+              <%= image_tag('t4.jpg', class: 'img-fluid') %>
               <div class="align-items-center justify-content-center d-flex">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -189,96 +161,12 @@
     <div class="row d-flex justify-content-center">
       <div class="menu-content col-lg-9">
         <div class="title text-center">
-          <h1 class="mb-10 text-white">Join us today without any hesitation</h1>
-          <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-          <a class="primary-btn" href="#">I am a Candidate</a>
-          <a class="primary-btn" href="#">We are an Employer</a>
+          <h2 class="mb-10 text-white">Rejoignez nous sans hésitation</h2>
+          <p class="text-white">Le portail Freedelivers est gratuit et vous permet d'être mis en relation avec vos clients sans cout cacher. Fixez vous même vos conditions avec vos clients. </p>
+          <%= link_to('Oui, je veux être un Freedelivers', new_user_registration_path, class: "primary-btn")%>
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End calto-action Area -->
-
-<!-- Start testimonial Area -->
-<section class="testimonial-area section-gap" id="review">
-  <div class="container">
-    <div class="row d-flex justify-content-center">
-      <div class="menu-content pb-60 col-lg-8">
-        <div class="title text-center">
-          <h1 class="mb-10">Testimonial from our Clients</h1>
-          <p>Who are in extremely love with eco friendly system.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="active-review-carusel">
-        <div class="single-review">
-          <img src="img/r1.png" alt="">
-          <div class="title d-flex flex-row">
-            <h4>lorem ipusm</h4>
-            <div class="star">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-          </div>
-          <p>
-            Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
-          </p>
-        </div>
-        <div class="single-review">
-          <img src="img/r2.png" alt="">
-          <div class="title d-flex flex-row">
-            <h4>lorem ipusm</h4>
-            <div class="star">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-          </div>
-          <p>
-            Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
-          </p>
-        </div>
-        <div class="single-review">
-          <img src="img/r1.png" alt="">
-          <div class="title d-flex flex-row">
-            <h4>lorem ipusm</h4>
-            <div class="star">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-          </div>
-          <p>
-            Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
-          </p>
-        </div>
-        <div class="single-review">
-          <img src="img/r2.png" alt="">
-          <div class="title d-flex flex-row">
-            <h4>lorem ipusm</h4>
-            <div class="star">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-          </div>
-          <p>
-            Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End testimonial Area -->
