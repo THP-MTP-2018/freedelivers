@@ -9,11 +9,14 @@ class ServicesController < ApplicationController
     else
       @services = Service.all
     end
+
+      @users = User.all
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
+    
   end
 
   # GET /services/new
