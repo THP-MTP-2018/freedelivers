@@ -4,7 +4,11 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.search(params[:search])
+    if params[:term]
+      @services = Service.search_by_full_name(params[:term])
+    else
+      @services = Service.all
+    end
   end
 
   # GET /services/1

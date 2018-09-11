@@ -1,10 +1,20 @@
 class Service < ApplicationRecord
   belongs_to :user
 
-  def self.search(search)
+  include PgSearch
 
-      where("delivery_city Like ?", "%#{search}%")
+  scope :sorted, ->{ order(delivery_city: :asc) }
 
-  end
+  pg_search_scope :search_by_full_name,
+                  against: [
+                    :delivery_city,
+                    :price
+                  ],
+                  using: {
+                    tsearch: {
+                      prefix: true,
+                      normalization: 3
+                    }
+                  }
 
 end
