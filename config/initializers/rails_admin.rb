@@ -30,6 +30,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_admin)
 end
 
+
       config.actions do
         dashboard                     # mandatory
         index                         # mandatory
