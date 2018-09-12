@@ -5,7 +5,7 @@
     <div class="row justify-content-center d-flex">
       <div class="col-lg-10 post-list">
 
-
+      <% @services.each do|service| %>
         <div class="single-post d-flex flex-row">
           <div class="thumb mr-4">
             <img src="https://png.icons8.com/nolan/96/000000/contacts.png" alt="">
@@ -14,27 +14,22 @@
           <div class="details ml-4">
             <div class="title d-flex flex-row justify-content-between">
               <div class="titles">
-              <% @users.each do|user| %>
-              <% @services.each do|service| %>
-              <% if user.id == service.user_id %>
-                <a href="single.html"><h4><%= user.first_name%> <%= user.last_name%></h4></a>
+                <a href="single.html"><h4><%= service.user.first_name%> <%= service.user.last_name%></h4></a>
 
                 <h6>Freedelivers</h6>
               </div>
               <ul class="btns">
-                <li><a href="#">Détails</a></li>
+                <li><%= link_to 'Détails', service %></li>
               </ul>
             </div>
 
-            <p class="address"><span class="lnr lnr-envelope"></span> <%= user.email%></p>
-            <p class="address"><span class="lnr lnr-phone-handset"></span> +33 <%= user.mobile_phone%></p>
+            <p class="address"><span class="lnr lnr-envelope"></span> <%= service.user.email%></p>
+            <p class="address"><span class="lnr lnr-phone-handset"></span> +33 <%= service.user.mobile_phone%></p>
 
             <p class="address"><span class="lnr lnr-map-marker"></span> <%= service.delivery_city %></p>
             <p class="address">Conditions tarifaires: <%= service.price%>€ </p>
             <p class="address">Poids du colis: 0 kg - <%= service.weight_package%> kg </p>
-            <% end %>
-            <% end %>
-            <% end %>
+
 
             <p>
               La fiche complète du livreur est disponible grâce au bouton détails.
@@ -42,6 +37,7 @@
             </p>
           </div>
         </div>
+      <% end %>
 
       </div>
     </div>
