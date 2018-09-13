@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+
 gem 'rails_admin', '~> 1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -18,11 +19,16 @@ gem 'uglifier', '>= 1.3.0'
 
 
 # gem for freedelivers project
+
+gem 'popper_js', '~> 1.14.3'
+
+gem "font-awesome-rails"
+
 gem 'devise'
 
 gem 'pg_search'
 
-
+gem 'will_paginate', '~> 3.1.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -21,7 +21,7 @@
       <div class="col-lg-12 post-list">
         <div class="single-post d-flex flex-row">
             <div class="thumb">
-              <h2>Bonjour, <%= current_user.first_name %></h2>
+              <h2> Bonjour, <%= current_user.first_name %></h2>
             </div>
         </div>
       </div>
@@ -34,6 +34,7 @@
       <div class="single-post d-flex flex-row">
         <div class="title d-flex flex-row justify-content-between">
           <div class="titles">
+            <img src="https://png.icons8.com/nolan/64/000000/conference.png">
             <h3>Profil</h3>
             <br>
             <p>Nom: <%= current_user.last_name %></p>
@@ -54,8 +55,10 @@
       <div class="single-post d-flex flex-row">
         <div class="title d-flex flex-row justify-content-between">
           <div class="titles">
+            <img src="https://png.icons8.com/nolan/64/000000/services.png">
             <h3>Vos services</h3>
             <br>
+
               <% @services.each do|service| %>
                 <% if current_user.id == service.user_id %>
                   <p>km: <%= service.mileage %></p>
@@ -66,15 +69,20 @@
                   <p>Volume du colis: <%= service.volume_package %> (m2, cm....)</p>
                   <p>Type de colis: <%= service.package_type %></p>
                   <p>Vos conditions: <br><%= service.terms_transport %></p>
-                  <% end %>
                   <ul>
-                    <% if current_user.id == service.user_id %>
                       <li><%= link_to('Mettre à jour', edit_service_path(service), class: "ticker-btn")%></li>
-                    <% else %>
-                      <li><%= link_to('Ajouter votre service', new_service_path, class: "ticker-btn")%></li>
-                    <% end %>
                   </ul>
                 <% end %>
+              <% end %>
+
+              <% @services.each do|service| %>
+                  <% if current_user.id != service.user_id  %>
+                    <ul>
+                      <li><%= link_to('Ajouter votre service', new_service_path, class: "ticker-btn")%></li>
+                    </ul>
+                  <% end %>
+                <% break %>
+              <% end %>
           </div>
         </div>
       </div>

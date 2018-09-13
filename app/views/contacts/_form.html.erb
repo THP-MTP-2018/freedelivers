@@ -1,37 +1,52 @@
-<%= form_with(model: contact, local: true) do |form| %>
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+<!-- Start contact-page Area -->
+<section class="contact-page-area section-gap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 d-flex flex-column">
+        <h2>Informations supplémentaire</h2>
+        <br>
+        <h4>On vous réponds au plus vite</h4>
+        <br>
+        <%= link_to('Votre compte', new_user_session_path, class: "contact-btns")%>
+        <%= link_to('Inscription', new_user_registration_path, class: "contact-btns")%>
+      </div>
+      <div class="col-8">
+                <%= form_with model: contact, local: true do |form| %>
+                  <% if contact.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-      <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                      <ul>
+                      <% contact.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+              <div class="mt-9">
+                <%= form.text_field :name, class: 'single-input', placeholder: 'Votre Nom',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Votre Nom'" %>
+              </div>
+
+              <div class="mt-10">
+              <%= form.email_field :email, class: 'single-input', placeholder: 'Email',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Email'" %>
+              </div>
+
+              <div class="mt-10">
+              <%= form.text_field :subject, class: 'single-input', placeholder: 'Objet de votre message',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Objet de votre message'" %>
+              </div>
+
+              <div class="mt-10">
+              <%= form.text_area :subject, class: 'single-input', placeholder: 'Votre message',onfocus: "this.placeholder = ''",onblur: "this.placeholder = 'Votre message'",rows: 5 %>
+              </div>
+
+              <div class="mt-10">
+              <%= form.submit "Envoie", class: 'genric-btn primary circle' %>
+              </div>
+      </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subject %>
-    <%= form.text_field :subject %>
-  </div>
-
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_area :message %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>
+<!-- End contact-page Area -->
