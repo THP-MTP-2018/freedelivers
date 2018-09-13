@@ -11,6 +11,20 @@
 // about supported directives.
 //
 //= require js/vendor/jquery-2.2.4.min.js
+//= require js/vendor/bootstrap.min
+//= require js/easing.min
+//= require js/hoverIntent
+//= require js/jquery.ajaxchimp.min
+//= require js/jquery.magnific-popup.min
+//= require js/jquery.nice-select.min
+//= require js/jquery.sticky
+//= require js/mail-script
+//= require js/owl.carousel.min
+//= require js/parallax.min
+//= require js/slick
+//= require js/superfish
+//= require js/superfish.min
+//= require popper
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
