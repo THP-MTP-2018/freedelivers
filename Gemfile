@@ -23,6 +23,7 @@ gem 'devise'
 gem 'pg_search'
 
 
+gem 'will_paginate', '~> 3.1.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

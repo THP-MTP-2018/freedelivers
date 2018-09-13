@@ -18,7 +18,7 @@
             </div>
           </div>
         <% end %>
-        <p class="text-white"> <span>Search by tags:</span> Tecnology, Business, Consulting, IT Company, Design, Development</p>
+        <p class="text-white"> <span>Recherche par:</span> ville</p>
       </div>
     </div>
   </div>
@@ -31,6 +31,7 @@
     <div class="row">
       <div class="col-lg-3 col-md-6">
         <div class="single-feature">
+          <img src="https://png.icons8.com/nolan/64/000000/google-web-search.png">
           <h4>Cherchez</h4>
           <p>
             Trouvez un livreur grace à notre portail Freedelivers.
@@ -39,6 +40,7 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="single-feature">
+          <img src="https://png.icons8.com/nolan/64/000000/phone.png">
           <h4>Contactez</h4>
           <p>
             Prenez contact avec le livreur de votre choix grace aux fiches individuelle.
@@ -47,6 +49,8 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="single-feature">
+          <img src="https://png.icons8.com/nolan/64/000000/handshake.png">
+
           <h4>Négociez</h4>
           <p>
             Chaque livreur est libre de ces conditions tarifaire.
@@ -55,6 +59,7 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="single-feature">
+          <img src="https://png.icons8.com/nolan/64/000000/leaderboard.png">
           <h4>Gagnez</h4>
           <p>
             Avec le portail Freedelivers ne perdez pas votre temps à livrer.
@@ -83,100 +88,50 @@
   </div>
 </section>
 <!-- End feature-cat Area -->
-
 <!-- Start post Area -->
 <section class="post-area section-gap">
   <div class="container">
     <div class="row justify-content-center d-flex">
       <div class="col-lg-10 post-list">
-        <ul class="cat-list">
-          <li><a href="#">Recent</a></li>
-          <li><a href="#">Full Time</a></li>
-          <li><a href="#">Intern</a></li>
-          <li><a href="#">part Time</a></li>
-        </ul>
+        <% @services.each do |service| %>
 
-
-        <div class="single-post d-flex flex-row">
-          <div class="thumb">
-            <img src="img/post.png" alt="">
-            <ul class="tags">
-              <li>
-                <a href="#">Art</a>
-              </li>
-              <li>
-                <a href="#">Media</a>
-              </li>
-              <li>
-                <a href="#">Design</a>
-              </li>
-            </ul>
-          </div>
-          <div class="details">
-            <div class="title d-flex flex-row justify-content-between">
-              <div class="titles">
-                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                <h6>Premium Labels Limited</h6>
-              </div>
-              <ul class="btns">
-                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                <li><a href="#">Apply</a></li>
-              </ul>
+          <div class="single-post d-flex flex-row">
+            <div class="thumb mr-4">
+              <img src="https://png.icons8.com/nolan/96/000000/contacts.png" alt="">
             </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-            </p>
-            <h5>Job Nature: Full time</h5>
-            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+            <div class="details ml-4">
+              <div class="title d-flex flex-row justify-content-between">
+                <div class="titles">
+                  <a href="single.html"><h4><%= service.user.first_name %> <%= service.user.last_name %></h4></a>
+                  <h6>Freedelivers</h6>
+                </div>
+                <ul class="btns">
+                  <li><%= link_to 'Détails', service %></li>
+                </ul>
+              </div>
+
+              <p class="address"><span class="lnr lnr-envelope"></span> <%= service.user.email %></p>
+              <p class="address"><span class="lnr lnr-phone-handset"></span> +33 <%= service.user.mobile_phone %></p>
+
+              <p class="address"><span class="lnr lnr-map-marker"></span> <%= service.delivery_city %></p>
+              <p class="address">Conditions tarifaires: <%= service.price%>€ </p>
+              <p class="address">Poids du colis: 0 kg - <%= service.weight_package %> kg </p>
+              <p>
+                La fiche complète du livreur est disponible grâce au bouton détails.
+                Vous trouverez les informations supplémentaires qu'offrent le freedeliver.
+              </p>
+            </div>
+          </div>
+        <% end %>
+        <div class="apple_pagination">
+          <div class="paginate_center">
+            <%= will_paginate @services %>
           </div>
         </div>
-
-        <div class="single-post d-flex flex-row">
-          <div class="thumb">
-            <img src="img/post.png" alt="">
-            <ul class="tags">
-              <li>
-                <a href="#">Art</a>
-              </li>
-              <li>
-                <a href="#">Media</a>
-              </li>
-              <li>
-                <a href="#">Design</a>
-              </li>
-            </ul>
-          </div>
-          <div class="details">
-            <div class="title d-flex flex-row justify-content-between">
-              <div class="titles">
-                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                <h6>Premium Labels Limited</h6>
-              </div>
-              <ul class="btns">
-                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                <li><a href="#">Apply</a></li>
-              </ul>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-            </p>
-            <h5>Job Nature: Full time</h5>
-            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-          </div>
-        </div>
-
-        <a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
-
-      </div>
-      <div class="col-lg-2 sidebar">
-        <%# NOTE: adwords %>
       </div>
     </div>
   </div>
 </section>
-<!-- End post Area -->
 
 
 <!-- Start callto-action Area -->
@@ -186,7 +141,7 @@
       <div class="menu-content col-lg-9">
         <div class="title text-center">
           <h2 class="mb-10 text-white">Rejoignez nous sans hésitation</h2>
-          <p class="text-white">Le portail Freedelivers est gratuit et vous permet d'être mis en relation avec vos clients sans cout cacher. Fixez vous même vos conditions avec vos clients. </p>
+          <p class="text-white">Le portail Freedelivers est gratuit et vous permet d'être mis en relation avec vos clients sans coût cacher. Fixez-vous même vos conditions avec vos clients.</p>
           <%= link_to('Oui, je veux être un Freedelivers', new_user_registration_path, class: "primary-btn")%>
         </div>
       </div>

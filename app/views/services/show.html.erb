@@ -1,44 +1,59 @@
-<p id="notice"><%= notice %></p>
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="about-content col-lg-12">
+        <h1 class="text-white">
+          Fiche de votre Freedelivers
+        </h1>
+        <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="category.html"> Job category</a></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>
-  <strong>Mileage:</strong>
-  <%= @service.mileage %>
-</p>
+<!-- Start post Area -->
+<section class="post-area section-gap">
+  <div class="container">
+    <div class="row justify-content-center d-flex">
+      <div class="col-lg-10 post-list">
 
-<p>
-  <strong>Delivery city:</strong>
-  <%= @service.delivery_city %>
-</p>
+        <div class="single-post d-flex flex-row">
+          <div class="thumb mr-4">
+            <img src="https://png.icons8.com/nolan/96/000000/contacts.png" alt="">
 
-<p>
-  <strong>Transport type:</strong>
-  <%= @service.transport_type %>
-</p>
+          </div>
+          <div class="details ml-4">
+            <div class="title d-flex flex-row justify-content-between">
+              <div class="titles">
+                <a href="single.html"><h4><%= @service.user.first_name%> <%= @service.user.last_name%></h4></a>
 
-<p>
-  <strong>Price:</strong>
-  <%= @service.price %>
-</p>
+                <h6>Freedelivers</h6>
+              </div>
+            </div>
 
-<p>
-  <strong>Terms transport:</strong>
-  <%= @service.terms_transport %>
-</p>
+            <p class="address"><span class="lnr lnr-envelope"></span> <%= @service.user.email%></p>
+            <p class="address"><span class="lnr lnr-phone-handset"></span> +33 <%= @service.user.mobile_phone%></p>
 
-<p>
-  <strong>Weight package:</strong>
-  <%= @service.weight_package %>
-</p>
+            <p class="address"><span class="lnr lnr-map-marker"></span> <%= @service.delivery_city %></p>
+          </div>
+        </div>
 
-<p>
-  <strong>Volume package:</strong>
-  <%= @service.volume_package %>
-</p>
 
-<p>
-  <strong>Package type:</strong>
-  <%= @service.package_type %>
-</p>
+    <div class="single-post job-details">
+      <h4 class="single-title">Les services du Freedelivers</h4>
+      <p class="address">Conditions tarifaires: <%= @service.price%>€ </p>
+      <p class="address">Poids du colis: 0 kg - <%= @service.weight_package%> kg </p>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+      <p class="address">Distance: <%= @service.mileage %> km </p>
+      <p class="address">Type de transport: <%= @service.transport_type %></p>
+      <p class="address">Volume du colis: <%= @service.volume_package %></p>
+      <p class="address">Type de colis: <%= @service.package_type %></p>
+    </div>
+
+    <div class="single-post job-details">
+      <h4 class="single-title">Les conditions du Freedelivers</h4>
+        <p><%= @service.terms_transport%></p>
+    </div>
+</section>
