@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /services
   # GET /services.json
   def index
@@ -18,15 +18,9 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
-
     @services = Service.all
+      @service = Service.new
 
-    if @services.nil?
-    @service = Service.new
-    else
-      redirect_to :root
-    end
-    
   end
 
   # GET /services/1/edit
