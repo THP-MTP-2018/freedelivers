@@ -14,12 +14,13 @@
  *= require_tree .
  *= require_self
  */
-
- @import url("css/linearicons.css");
+ @import url("css/animate.min.css");
  @import url("css/bootstrap.css");
+ @import url("css/jquery.DonutWidget.min.css");
+ @import url("css/jquerysctipttop.css");
+ @import url("css/linearicons.css");
  @import url("css/magnific-popup.css");
  @import url("css/nice-select.css");
- @import url("css/animate.min.css");
  @import url("css/owl.carousel.css");
 
  /*--------------------------- Color variations ----------------------*/
@@ -2325,7 +2326,7 @@
  }
 
  .banner-area {
-   background: url(../header-bg.jpg) center;
+   background: url(header-bg.jpg) center;
    background-size: cover;
  }
 
