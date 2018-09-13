@@ -18,7 +18,15 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
+
+    @services = Service.all
+
+    if @services.nil?
     @service = Service.new
+    else
+      redirect_to :root
+    end
+    
   end
 
   # GET /services/1/edit
