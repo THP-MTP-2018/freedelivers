@@ -19,6 +19,7 @@
 //= require js/jquery.nice-select.min
 //= require js/jquery.sticky
 //= require js/mail-script
+//= require js/main
 //= require js/owl.carousel.min
 //= require js/parallax.min
 //= require js/slick
