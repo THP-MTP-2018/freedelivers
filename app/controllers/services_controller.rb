@@ -1,13 +1,12 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   # GET /services
   # GET /services.json
   def index
     if params[:term]
-      @services = Service.search_by_full_name(params[:term])
+      @services = Service.search_by_full_name(params[:term]).paginate(page: params[:page], per_page: 2)
     else
-      @services = Service.all
+      @services = Service.all.paginate(page: params[:page], per_page: 2)
     end
   end
 
@@ -18,7 +17,7 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
-    @services = Service.all
+
       @service = Service.new
 
   end

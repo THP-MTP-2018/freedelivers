@@ -21,14 +21,12 @@
 
         <div class="single-post d-flex flex-row">
           <div class="thumb mr-4">
-            <img src="https://png.icons8.com/nolan/96/000000/contacts.png" alt="">
-
+            <img src="https://png.icons8.com/nolan/96/000000/resume.png">
           </div>
           <div class="details ml-4">
             <div class="title d-flex flex-row justify-content-between">
               <div class="titles">
                 <a href="single.html"><h4><%= @service.user.first_name%> <%= @service.user.last_name%></h4></a>
-
                 <h6>Freedelivers</h6>
               </div>
             </div>
@@ -41,19 +39,30 @@
         </div>
 
 
-    <div class="single-post job-details">
-      <h4 class="single-title">Les services du Freedelivers</h4>
-      <p class="address">Conditions tarifaires: <%= @service.price%>€ </p>
-      <p class="address">Poids du colis: 0 kg - <%= @service.weight_package%> kg </p>
+    <div class="single-post d-flex flex-row">
+      <div class="thumb mr-4">
+        <img src="https://png.icons8.com/nolan/96/000000/contacts.png">
+      </div>
 
-      <p class="address">Distance: <%= @service.mileage %> km </p>
-      <p class="address">Type de transport: <%= @service.transport_type %></p>
-      <p class="address">Volume du colis: <%= @service.volume_package %></p>
-      <p class="address">Type de colis: <%= @service.package_type %></p>
+      <div class="details ml-4">
+        <h4 class="single-title">Les services du Freedelivers</h4>
+        <p class="address">Conditions tarifaires: <%= @service.price%>€ </p>
+        <p class="address">Poids du colis: 0 kg - <%= @service.weight_package%> kg </p>
+
+        <p class="address">Distance: <%= @service.mileage %> km </p>
+        <p class="address">Type de transport: <%= @service.transport_type %></p>
+        <p class="address">Volume du colis: <%= @service.volume_package %></p>
+        <p class="address">Type de colis: <%= @service.package_type %></p>
+      </div>
     </div>
 
-    <div class="single-post job-details">
-      <h4 class="single-title">Les conditions du Freedelivers</h4>
+    <div class="single-post d-flex flex-row">
+      <div class="thumb mr-4">
+      <img src="https://png.icons8.com/nolan/96/000000/term.png">
+      </div>
+      <div class="details ml-4">
+        <h4 class="single-title">Les conditions du Freedelivers</h4>
         <p><%= @service.terms_transport%></p>
+      </div>
     </div>
 </section>
