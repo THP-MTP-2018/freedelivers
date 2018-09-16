@@ -16,13 +16,15 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
-    
+
   end
 
   # GET /services/new
   def new
-    @service = Service.new
-  end
+
+       @service = Service.new
+     
+   end
 
   # GET /services/1/edit
   def edit
