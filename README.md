@@ -1,24 +1,15 @@
-# README
+# The THP project name : Freedelivers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Configuration ruby & Rails
 
-Things you may want to cover:
+Ruby version : 2.5.1
+<br>
+Rails version : 5.2.0
 
-* Ruby version
+## lien heroku 
 
-* System dependencies
+```sh
+https://freedelivers-mtp.herokuapp.com
+```
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
